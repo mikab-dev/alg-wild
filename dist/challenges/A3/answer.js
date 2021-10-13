@@ -13,16 +13,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // ↓ uncomment bellow lines and add your response!
 function default_1({ lastActivityDatetime, messages, }) {
     const sortByDate = messages.sort((a, b) => a.sentAt > b.sentAt ? 1 : b.sentAt > a.sentAt ? -1 : 0);
-    sortByDate.forEach((date) => {
+    return sortByDate.map((date) => {
         const lastActivity = JSON.stringify(lastActivityDatetime);
         const dateSend = JSON.stringify(date.sentAt);
         if (dateSend > lastActivity) {
-            date.unread = true;
+            return { ...date, unread: true };
         }
         else {
-            date.unread = false;
+            return { ...date, unread: false };
         }
     });
-    return sortByDate;
 }
 exports.default = default_1;
