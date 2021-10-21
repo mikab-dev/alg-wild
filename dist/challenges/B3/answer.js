@@ -9,3 +9,22 @@
  * @returns The same list but with a new closestGroups prop on each
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+// ↓ uncomment bellow lines and add your response!
+function default_1({ groups, }) {
+    // console.log(groups);
+    // const filteredList = groups.filter(index => groups.skills[index]
+    // const compareSkills = groups
+    //   .filter((value) => skills.includes(value))
+    //   .filter((value, index, self) => self.indexOf(value) === index);
+    for (let i = 0; i < groups.length; i++) {
+        for (let k = i + 1; k < groups.length; k++) {
+            if (groups[i] != groups[k]) {
+                const test = groups[i].skills;
+                const test2 = groups[k].skills;
+                console.log(test.includes("MySQL"));
+            }
+        }
+    }
+    return [];
+}
+exports.default = default_1;
